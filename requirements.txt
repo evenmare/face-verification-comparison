@@ -1,0 +1,2 @@
+deepface
+tensorflow<=2.12
