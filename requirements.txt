@@ -1,2 +1,3 @@
 deepface
+tqdm
 tensorflow<=2.12
