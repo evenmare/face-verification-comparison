@@ -42,9 +42,10 @@ class ModelVerifier:
         total = 0
         print(f'Verification {self.model_name} on {str(dataset_adapter)}', end='\n\n')
 
-        for root_image_path in dataset_adapter.root_images_paths_iterator():
-            print(f'Root image path: {root_image_path}'.ljust(50), end='...\n')
-            for verification_image_path in dataset_adapter.images_paths_iterator():
+        for verification_image_path in dataset_adapter.images_paths_iterator():
+            print(f'Image path: {verification_image_path} ...'.ljust(50))
+            for root_image_path in dataset_adapter.root_images_paths_iterator():
+                print(f'Root image path: {root_image_path} ...'.ljust(50))
                 result = DeepFace.verify(
                     root_image_path,
                     verification_image_path,
